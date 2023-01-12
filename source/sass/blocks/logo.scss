@@ -1,0 +1,31 @@
+.logo {
+  display: inline-flex;
+
+  &--header {
+    padding-top: 10px;
+  }
+
+  &[href] {
+    @include hover-focus {
+      opacity: 0.8;
+    }
+  }
+
+  @include vp-1199 {
+    &--header {
+      padding-top: 6px;
+    }
+  }
+}
+
+.logo img {
+  @include vp-1199 {
+    width: 82px;
+    height: 17px;
+  }
+
+  @include vp-767 {
+    width: 68px;
+    height: 15px;
+  }
+}

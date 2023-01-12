@@ -1,0 +1,122 @@
+.membership-card {
+  position: relative;
+  z-index: 1;
+  padding: 50px 70px 60px;
+
+  text-align: center;
+
+  border: 7px solid $color-transparent;
+  background-color: $color-default-white;
+  transition: border $trans-default;
+
+  @include hover-focus {
+    border-image: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
+    border-image-slice: 1;
+
+    & .btn {
+      color: $color-default-white;
+
+      border-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+      border-image-slice: 1;
+      background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+      background-size: cover;
+    }
+  }
+
+  @include vp-1199 {
+    padding-bottom: 60px;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 42px 48px;
+  }
+}
+
+.membership-card h3 {
+  margin: 0;
+  margin-bottom: 8px;
+
+  font-size: 26px;
+
+  @include vp-767 {
+    margin-bottom: 6px;
+
+    font-size: 22px;
+  }
+}
+
+.membership-card p {
+  margin: 0;
+  margin-bottom: 63px;
+
+  color: $color-chambray;
+
+  @include vp-767 {
+    margin-bottom: 55px;
+  }
+}
+
+.membership-card .btn {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  background-color: $color-default-white;
+  border: 2px solid $color-resolution-blue;
+  transition: border $trans-default;
+
+  @include vp-1199 {
+    width: 206px;
+  }
+}
+
+.membership-card__price {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 34px;
+
+  font-weight: 700;
+  font-size: 60px;
+  color: $color-egyptian-blue;
+
+  &::before {
+    content: attr(data-price);
+    position: absolute;
+    bottom: 15px;
+    left: 48%;
+    z-index: -1;
+
+    font-size: 100px;
+    line-height: 1;
+    font-family: $ff-roboto-condensed;
+    color: $color-whisper;
+
+    opacity: 0.48;
+    transform: translateX(-50%);
+  }
+
+  @include vp-1199 {
+    margin-bottom: 34px;
+    padding-left: 4px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 28px;
+    padding-left: 4px;
+
+    font-size: 48px;
+
+    &::before {
+      font-size: 80px;
+    }
+  }
+}
+
+.membership-card__rouble {
+  font-weight: 400;
+  color: $color-sapphire;
+}

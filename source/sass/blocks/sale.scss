@@ -1,0 +1,272 @@
+.sale {
+  padding-top: 149px;
+  padding-bottom: 50px;
+
+  @include vp-1199 {
+    padding-top: 94px;
+    padding-bottom: 50px;
+  }
+
+  @include vp-767 {
+    padding-top: 64px;
+    padding-bottom: 50px;
+  }
+}
+
+.sale__title {
+  margin: 0;
+  margin-bottom: 33px;
+
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 65px;
+  font-family: $ff-alumni-sans;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  @include vp-1199 {
+    margin-bottom: 39px;
+    padding-right: 10px;
+
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 41px;
+    padding-right: 5px;
+
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.sale__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(211px, auto);
+  grid-auto-flow: dense;
+  column-gap: 40px;
+  row-gap: 40px;
+  margin: 0;
+  padding: 0;
+
+  @include vp-1199 {
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(211px, auto);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sale__item {
+  display: flex;
+  align-self: stretch;
+  padding: 7px;
+
+  background-image: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+}
+
+.sale__lead-item {
+  display: flex;
+  grid-row: span 2;
+
+  @include vp-1023 {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+  }
+
+  @include vp-767 {
+    max-width: 500px;
+  }
+}
+
+.sale__lead-card {
+  flex-grow: 1;
+  display: flex;
+
+  color: $color-default-white;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.sale__lead-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 19px;
+  width: 50%;
+  padding: 41px 45px 45px;
+
+  background-color: $color-torch-red;
+
+  @include vp-1199 {
+    flex-grow: 1;
+    width: 41.2%;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    gap: 14px;
+    align-items: center;
+    padding-bottom: 44px;
+
+    text-align: center;
+  }
+}
+
+.sale__lead-card h3 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  font-size: 28px;
+  line-height: 1;
+}
+
+.sale__price {
+  margin-top: 2px;
+
+  font-size: 70px;
+}
+
+.sale__lead-card p {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.4;
+
+  @include vp-767 {
+    margin-bottom: 12px;
+  }
+}
+
+.sale__lead-card .sale__link {
+  margin-top: auto;
+
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.sale__link {
+  justify-self: start;
+  display: inline-flex;
+  margin-top: auto;
+  padding: 5px 0 1px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: inherit;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid;
+  cursor: pointer;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  @include vp-767 {
+    margin-top: 0;
+  }
+}
+
+.sale__lead-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  max-width: 280px;
+  min-height: 462px;
+  overflow-x: hidden;
+
+  background-color: $color-midnight-express;
+
+  @include vp-1199 {
+    width: 58.8%;
+    max-width: 399px;
+  }
+
+  @include vp-767 {
+    max-width: 100%;
+    width: 100%;
+    height: 0;
+    padding-bottom: 103.1%; // = 100% / (399/462)
+  }
+}
+
+.sale__lead-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 35% 0%;
+  aspect-ratio: 399/462;
+
+  @include vp-767 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.sale__card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2px;
+  padding: 19px 28px 28px;
+
+  background-color: $color-default-white;
+
+  @include vp-767 {
+    align-items: center;
+    text-align: center;
+    padding: 30px 28px;
+  }
+}
+
+.sale__card h3 {
+  margin: 0;
+
+  font-size: 26px;
+}
+
+.sale__card p {
+  margin: 0;
+  margin-bottom: 12px;
+
+  line-height: 1.4;
+
+  @include vp-767 {
+    margin-bottom: 18px;
+  }
+}
+
+.sale__break-tablet-mobile {
+  display: none;
+
+  @include vp-1199 {
+    display: inline;
+  }
+}

@@ -1,0 +1,105 @@
+.coach-card {
+  position: relative;
+  width: 260px;
+  min-height: 294px;
+
+  @include vp-1199 {
+    width: 268px;
+  }
+
+  @include vp-767 {
+    width: 226px;
+    min-height: 274px;
+  }
+}
+
+.coach-card__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 52px 47px 24px 47px;
+
+  color: $color-default-white;
+
+  overflow-y: scroll;
+
+  @include vp-767 {
+    padding: 42px 28px 25px;
+  }
+}
+
+.coach-card:hover .coach-card__text,
+.coach-card:active .coach-card__text,
+.coach-card:focus-within .coach-card__text {
+  flex-direction: column;
+
+  background-color: rgba(16, 38, 84, 0.89);
+}
+
+.coach-card h3 {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.coach-card p {
+  margin: 0;
+  margin-bottom: 31px;
+
+  color: $color-spindle;
+  text-align: center;
+  opacity: 0;
+
+  transition: opacity $trans-default;
+}
+
+.coach-card:hover p,
+.coach-card:active p,
+.coach-card:focus-within p {
+  opacity: 1;
+}
+
+.coach-card ul {
+  margin: 0;
+  margin-left: 7px;
+  padding-left: 16px;
+  list-style-type: disc;
+
+  font-size: 14px;
+  opacity: 0;
+
+  transition: opacity $trans-default;
+}
+
+.coach-card li:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.coach-card:hover ul,
+.coach-card:active ul,
+.coach-card:focus-within ul {
+  opacity: 1;
+}
+
+
+.coach-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.coach-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

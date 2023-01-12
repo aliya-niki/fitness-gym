@@ -1,0 +1,173 @@
+.gym {
+  @include vp-767 {
+    padding: 0;
+  }
+}
+
+.gym__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 120px 0 120px 60px;
+
+  @include vp-1199 {
+    flex-direction: column;
+    gap: 44px;
+    padding: 61px 0 98px;
+
+    text-align: center;
+  }
+
+  @include vp-767 {
+    gap: 33px;
+    padding: 64px 0 69px;
+
+    text-align: left;
+  }
+}
+
+.gym__text {
+  padding-top: 40px;
+
+  @include vp-767 {
+    padding: 0 15px;
+  }
+}
+
+.gym__title {
+  margin: 0;
+  margin-bottom: 7px;
+
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  font-family: $ff-alumni-sans;
+  letter-spacing: 0.03em;
+
+  @include vp-1199 {
+    margin-bottom: 0;
+    padding-right: 12px;
+
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 4px;
+
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.gym__lead {
+  margin: 0;
+  margin-bottom: 38px;
+
+  font-size: 18px;
+
+  @include vp-1199 {
+    margin-bottom: 33px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 25px;
+  }
+}
+
+.gym__description {
+  margin: 0;
+  margin-bottom: 10px;
+
+  @include vp-1199 {
+    max-width: 520px;
+    margin: 0 auto;
+
+    &--desktop-only {
+      position: absolute;
+
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+
+      white-space: nowrap;
+
+      border: 0;
+
+      clip: rect(0 0 0 0);
+      clip-path: inset(100%);
+    }
+  }
+
+  @include vp-767 {
+    margin: 0;
+    padding-right: 22px;
+  }
+}
+
+.gym__description br {
+  display: none;
+
+  @include vp-1199 {
+    display: inline;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.gym__media-container {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include vp-1199 {
+    align-items: center;
+  }
+
+  @include vp-767 {
+    gap: 8px;
+  }
+}
+
+.gym__image {
+  margin-left: 63px;
+
+  @include vp-1199 {
+    width: 678px;
+    height: 345px;
+    margin-left: 0;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  @include vp-767 {
+    width: 100%;
+
+    & img {
+      width: 100%;
+      min-height: 313px;
+      object-fit: cover;
+    }
+  }
+}
+
+.gym__video {
+  margin-top: -113px;
+
+  @include vp-1199 {
+    margin-top: -84px;
+  }
+
+  @include vp-767 {
+    margin-top: 0;
+  }
+}

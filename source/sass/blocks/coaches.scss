@@ -1,0 +1,121 @@
+.coaches {
+  padding-top: 106px;
+  padding-bottom: 91px;
+
+  @include vp-1199 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 64px;
+    padding-bottom: 70px;
+  }
+}
+
+.coaches__inner {
+  position: relative;
+
+  @include vp-1199 {
+    max-width: 566px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include vp-767 {
+    max-width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.coaches__slider.no-js .coaches__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 40px;
+
+  @include vp-1199 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.coaches__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.coaches__slider-btn.no-js {
+  display: none;
+}
+
+.coaches__slider-btn {
+  // изменяет стили кнопок, добавленные swiper
+  &::after {
+    font-size: 32px;
+    color: $color-dark-gray;
+  }
+
+  @include vp-767 {
+    &::after {
+      font-size: 20px;
+    }
+  }
+
+  &--prev {
+    left: -62px;
+
+    @include vp-767 {
+      left: -10px;
+    }
+  }
+
+  &--next {
+    right: -62px;
+
+    @include vp-767 {
+      right: -10px;
+    }
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}
+
+.coaches__title {
+  margin: 0;
+  margin-bottom: 48px;
+
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 65px;
+  font-family: $ff-alumni-sans;
+  letter-spacing: 0.03em;
+
+  @include vp-1199 {
+    margin-bottom: 31px;
+    padding-right: 5px;
+
+    font-size: 42px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    margin-bottom: 42px;
+
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.coaches__card {
+  margin-left: auto;
+  margin-right: auto;
+}

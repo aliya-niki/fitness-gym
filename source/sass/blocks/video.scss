@@ -1,0 +1,103 @@
+.video {
+  position: relative;
+  width: 364px;
+  height: 228px;
+  background-color: $color-default-black;
+
+  @include vp-1199 {
+    width: 266px;
+    height: 167px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    height: 0;
+    padding-bottom: 52.18%;
+  }
+}
+
+.video__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 54, 122, 0.5);
+
+    &::before {
+      content: "Смотреть";
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1;
+
+      font-family: $ff-roboto-condensed;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-default-white;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.video--enabled .video__link {
+  &::before {
+    content: none;
+  }
+}
+
+.video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.video__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100px;
+  height: 100px;
+  display: none;
+
+  cursor: pointer;
+
+  background-color: $color-transparent;
+  background-image: url("../img/svg/icon-player.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+
+  @include vp-1199 {
+    width: 72px;
+    height: 72px;
+  }
+
+  @include hover-focus {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.video--enabled .video__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
