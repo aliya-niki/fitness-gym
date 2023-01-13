@@ -1650,8 +1650,8 @@ button,
   line-height: 110px;
   font-family: "Alumni Sans", "Arial", sans-serif;
   text-align: right;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .head__city {
@@ -1810,7 +1810,7 @@ button,
   background-color: rgba(20, 54, 122, 0.5);
 }
 
-.video__link::after::before {
+.video__link::before {
   content: "Смотреть";
   position: absolute;
   right: 20px;
@@ -2194,8 +2194,8 @@ button,
   grid-column: 1/-1;
   margin: 0;
   margin-bottom: 20px;
+  margin-top: 2px;
   font-size: 18px;
-  line-height: 1;
 }
 
 .promo__btn {
@@ -2941,7 +2941,7 @@ button,
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  max-width: 410px;
+  width: 410px;
   margin-left: auto;
 }
 
@@ -2961,7 +2961,7 @@ button,
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  max-width: 404px;
+  width: 464px;
   margin-right: auto;
 }
 
@@ -2987,10 +2987,11 @@ button,
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
-  -webkit-column-gap: 118px;
-  -moz-column-gap: 118px;
-  column-gap: 118px;
+  -webkit-column-gap: 119px;
+  -moz-column-gap: 119px;
+  column-gap: 119px;
   margin: 0;
+  margin-left: 3px;
 }
 
 .contacts__list::after {
@@ -3210,12 +3211,8 @@ button,
 */
 
 @media (max-width: 1439px) {
-  .contacts__trial {
-    padding-right: 17.3%;
-  }
-
   .contacts__data {
-    padding-left: 17.3%;
+    padding-left: 17.5%;
   }
 }
 
@@ -3260,9 +3257,9 @@ button,
     -ms-grid-rows: min-content 10px min-content 36px min-content;
     grid-template-rows: -webkit-min-content 10px -webkit-min-content 36px -webkit-min-content;
     grid-template-rows: min-content 10px min-content 36px min-content;
-    -webkit-column-gap: 25px;
-    -moz-column-gap: 25px;
-    column-gap: 25px;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
     max-width: 327px;
     margin-left: 0;
     padding: 55px 0 25px;
@@ -3271,7 +3268,7 @@ button,
   .head__title {
     font-size: 72px;
     line-height: 86px;
-    text-transform: none;
+    text-transform: lowercase;
   }
 
   .head__city {
@@ -3289,7 +3286,7 @@ button,
   }
 
   .head__btn {
-    margin-left: 1px;
+    margin-left: 6px;
     padding-top: 19px;
     padding-bottom: 19px;
     border: 4px solid;
@@ -3405,7 +3402,7 @@ button,
 
   .membership__tabs-btn {
     padding-bottom: 11px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .membership__list {
@@ -3467,8 +3464,8 @@ button,
   }
 
   .promo__text p {
-    margin-top: -3px;
     font-size: 12px;
+    line-height: 1;
   }
 
   .promo__btn {
@@ -3652,7 +3649,7 @@ button,
 
   .contacts__trial-wrapper {
     max-width: 100%;
-    width: auto;
+    width: 472px;
     margin-left: 0;
   }
 
@@ -3682,6 +3679,7 @@ button,
     -webkit-column-gap: 96px;
     -moz-column-gap: 96px;
     column-gap: 96px;
+    margin-left: 0;
   }
 
   .contacts__item {
@@ -3786,7 +3784,8 @@ button,
   }
 
   .head__features {
-    margin-right: -10px;
+    margin-right: -14px;
+    margin-left: -1px;
     padding-bottom: 30px;
   }
 
@@ -3794,8 +3793,8 @@ button,
     width: 290px;
     -ms-grid-column-span: 2;
     grid-column: span 2;
-    margin-left: -1px;
-    margin-right: -1px;
+    margin-left: 0;
+    margin-right: 0;
     padding-top: 21px;
     padding-bottom: 20px;
   }
@@ -3893,6 +3892,7 @@ button,
 
   .membership__tabs-btn {
     padding-bottom: 10px;
+    font-size: 16px;
   }
 
   .membership__list {
@@ -3942,6 +3942,10 @@ button,
   .promo__text {
     row-gap: 13px;
     padding: 48px 15.5% 50px;
+  }
+
+  .promo__text p {
+    margin-top: -3px;
   }
 
   .promo__btn {
@@ -4115,6 +4119,7 @@ button,
     max-width: 100%;
     width: 100%;
     height: 0;
+    min-height: 298px;
     padding-bottom: 103.1%;
   }
 
@@ -4255,6 +4260,10 @@ button,
     padding-left: 4.6%;
     padding-right: 4.6%;
     padding-bottom: 68px;
+  }
+
+  .contacts__trial-wrapper {
+    width: 100%;
   }
 
   .contacts__data {
