@@ -1564,6 +1564,8 @@ button,
 }
 
 .header {
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1572,6 +1574,7 @@ button,
   justify-content: space-between;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  gap: 20px;
   padding-top: 30px;
 }
 
@@ -1685,7 +1688,6 @@ button,
   font-size: 14px;
   line-height: 1.5;
   text-align: right;
-  opacity: 0.44;
 }
 
 .head__btn {
@@ -2009,7 +2011,8 @@ button,
 .membership__list {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 360px);
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -2280,7 +2283,7 @@ button,
 .coach-card {
   position: relative;
   width: 260px;
-  min-height: 294px;
+  height: 294px;
 }
 
 .coach-card__text {
@@ -2301,17 +2304,23 @@ button,
   align-items: center;
   padding: 52px 47px 24px 47px;
   color: #ffffff;
-  overflow-y: scroll;
+  overflow: hidden;
+}
+
+.coach-card:hover,
+.coach-card:focus-visible {
+  background-color: rgba(16, 38, 84, 0.89);
+  -webkit-box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
+  box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
 }
 
 .coach-card:hover .coach-card__text,
-.coach-card:active .coach-card__text,
-.coach-card:focus-within .coach-card__text {
+.coach-card:focus-visible .coach-card__text {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: rgba(16, 38, 84, 0.89);
+  overflow-y: auto;
 }
 
 .coach-card h3 {
@@ -2333,8 +2342,7 @@ button,
 }
 
 .coach-card:hover p,
-.coach-card:active p,
-.coach-card:focus-within p {
+.coach-card:focus-visible p {
   opacity: 1;
 }
 
@@ -2355,15 +2363,15 @@ button,
 }
 
 .coach-card:hover ul,
-.coach-card:active ul,
-.coach-card:focus-within ul {
+.coach-card:focus-visible ul {
   opacity: 1;
 }
 
 .coach-card__image {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -2371,7 +2379,6 @@ button,
 
 .coach-card__image img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -2700,9 +2707,6 @@ button,
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: 35% 0%;
-  object-position: 35% 0%;
-  aspect-ratio: 399/462;
 }
 
 .sale__card {
@@ -2914,6 +2918,8 @@ button,
   margin-left: -1px;
   margin-right: -1px;
   padding-bottom: 16px;
+  font-size: 14px;
+  line-height: 16px;
   border-width: 3px;
 }
 
@@ -3024,6 +3030,7 @@ button,
 
 .contacts__link {
   color: inherit;
+  word-break: break-word;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3406,10 +3413,12 @@ button,
   }
 
   .membership__list {
-    grid-template-columns: repeat(auto-fit, 442px);
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
   }
 
   .membership-card {
+    width: 442px;
     padding-bottom: 60px;
   }
 
@@ -3601,6 +3610,12 @@ button,
   .sale__lead-image {
     width: 58.8%;
     max-width: 399px;
+  }
+
+  .sale__lead-image img {
+    aspect-ratio: 399/462;
+    -o-object-position: top;
+    object-position: top;
   }
 
   .sale__break-tablet-mobile {
@@ -3912,6 +3927,7 @@ button,
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    width: 100%;
     padding: 40px 42px 48px;
   }
 
@@ -3964,9 +3980,8 @@ button,
   }
 
   .coaches__inner {
-    max-width: 290px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
+    width: 78%;
   }
 
   .coaches__slider.no-js .coaches__list {
@@ -3979,11 +3994,11 @@ button,
   }
 
   .coaches__slider-btn--prev {
-    left: -10px;
+    left: -40px;
   }
 
   .coaches__slider-btn--next {
-    right: -10px;
+    right: -40px;
   }
 
   .coaches__title {
@@ -3993,12 +4008,18 @@ button,
   }
 
   .coach-card {
-    width: 226px;
+    width: 100%;
+    height: 100%;
     min-height: 274px;
   }
 
   .coach-card__text {
     padding: 42px 28px 25px;
+  }
+
+  .coach-card__image img {
+    height: 100%;
+    aspect-ratio: 226/274;
   }
 
   .advantages .container {

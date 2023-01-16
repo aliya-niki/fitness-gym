@@ -50,6 +50,7 @@ const initCarousel = () => {
     const carousel = new window.Swiper(carouselElement, {
       loop: false,
       watchOverflow: true,
+      autoHeight: true,
 
       navigation: {
         nextEl: '[data-carousel-btn-next]',

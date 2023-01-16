@@ -189,7 +189,7 @@
 
 .membership__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 360px);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   column-gap: 40px;
   row-gap: 40px;
@@ -200,7 +200,7 @@
   list-style-type: none;
 
   @include vp-1199 {
-    grid-template-columns: repeat(auto-fit, 442px);
+    grid-template-columns: auto;
   }
 
   @include vp-767 {
